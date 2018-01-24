@@ -23,22 +23,21 @@ def pulsa():
                 for dc in range(100, -1, -50): # Decrease duty cycle: 100~0
                         p.ChangeDutyCycle(dc)
                         time.sleep(0.05)
-                time.sleep(0.20)
-		for dc in range(0, 101, 20):
+                time.sleep(0.10)
+		for dc in range(0, 101, 50):
 			p.ChangeDutyCycle(dc)
 			time.sleep(0.05)
-		time.sleep(1.5)
-		for dc in range(100, -1, -20):
+		time.sleep(0.5)
+		for dc in range(100, -1, -10):
 			p.ChangeDutyCycle(dc)
 			time.sleep(0.05)
 		time.sleep(1)
 
 def suona():
 	subprocess.call('aplay /home/pi/anima/battito.wav', shell=True)
-#	suona()
+
 try:
 	thread.start_new_thread(pulsa, () )
-#	thread.start_new_thread(suona, () )	
 
 except KeyboardInterrupt:
         p.stop()

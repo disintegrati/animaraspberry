@@ -23,7 +23,7 @@ def pulsa():
                 for dc in range(100, -1, -50): # Decrease duty cycle: 100~0
                         p.ChangeDutyCycle(dc)
                         time.sleep(0.05)
-                time.sleep(0.15)
+                time.sleep(0.20)
 		for dc in range(0, 101, 20):
 			p.ChangeDutyCycle(dc)
 			time.sleep(0.05)
